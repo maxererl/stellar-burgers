@@ -4,10 +4,12 @@ import { Preloader } from '../ui/preloader';
 import { OrderInfoUI } from '../ui/order-info';
 import { TIngredient, TOrder } from '@utils-types';
 import { useSelector, useDispatch } from '../../services/store';
-import { getIngredients } from '../../services/ingredientsSlice';
+import {
+  getIngredients,
+  fetchIngredients
+} from '../../services/ingredientsSlice';
 import { getOrders, getUserOrders } from '../../services/ordersSlice';
 import { getOrderByNumberApi } from '../../utils/burger-api';
-import { fetchIngredients } from '../../services/slice';
 
 export const OrderInfo: FC = () => {
   const { number } = useParams<{ number: string }>();

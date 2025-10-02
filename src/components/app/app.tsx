@@ -50,7 +50,7 @@ const App = () => {
             <Route
               path=':number'
               element={
-                <Modal title={'Детали заказа'} onClose={handleModalClose}>
+                <Modal title={'Детали заказа:'} onClose={handleModalClose}>
                   <OrderInfo />
                 </Modal>
               }
