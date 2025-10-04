@@ -1,7 +1,7 @@
-import * as cookieModule from '../../src/utils/cookie';
 import mockIngredients from '../fixtures/ingredients.json';
 import mockOrder from '../fixtures/order.json';
 const apiURL = 'https://norma.nomoreparties.space/api';
+const testUrl = 'http://localhost:4000';
 
 describe('Check ingredients', function () {
   describe('Check adding ingredients to constructor', function () {
@@ -9,7 +9,7 @@ describe('Check ingredients', function () {
       cy.intercept('GET', `${apiURL}/ingredients`, {
         fixture: 'ingredients.json'
       }).as('getIngredients');
-      cy.visit('http://localhost:4000');
+      cy.visit(testUrl);
     });
 
     it('Check buns', function () {
@@ -68,7 +68,7 @@ describe('Check modals', function () {
       cy.intercept('GET', `${apiURL}/ingredients`, {
         fixture: 'ingredients.json'
       }).as('getIngredients');
-      cy.visit('http://localhost:4000');
+      cy.visit(testUrl);
     });
 
     it('Check modal open', function () {
@@ -111,7 +111,7 @@ describe('Check user', function () {
       fixture: 'order.json'
     }).as('makeOrder');
 
-    cy.visit('http://localhost:4000');
+    cy.visit(testUrl);
   });
 
   it('Check order', function () {
